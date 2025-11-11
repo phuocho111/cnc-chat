@@ -13,13 +13,19 @@
     "test:unit": "vitest",
     "build-only": "vite build",
     "type-check": "vue-tsc --build",
-    "lint": "eslint . --fix --cache",
+    "lint": "eslint . --ext .vue,.js,.ts",
+    "lint:fix": "eslint . --ext .vue,.js,.ts --fix",
     "format": "prettier --write src/",
     "prepare": "husky"
   },
   "dependencies": {
+    "@tailwindcss/vite": "^4.1.17",
+    "axios": "^1.13.2",
+    "es-toolkit": "^1.41.0",
     "pinia": "^3.0.3",
+    "tailwindcss": "^4.1.17",
     "vue": "^3.5.22",
+    "vue-i18n": "^11.1.12",
     "vue-router": "^4.6.3"
   },
   "devDependencies": {
@@ -47,5 +53,11 @@
     "vite-plugin-vue-devtools": "^8.0.3",
     "vitest": "^3.2.4",
     "vue-tsc": "^3.1.1"
+  },
+  "lint-staged": {
+    "src/**/*.{vue,js,ts,css,json,md}": [
+      "yarn format",
+      "yarn lint"
+    ]
   }
 }
