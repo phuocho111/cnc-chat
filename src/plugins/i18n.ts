@@ -5,7 +5,7 @@ import ja from '@/locales/ja.json'
 import vn from '@/locales/vn.json'
 
 const i18n = createI18n({
-  locale: 'ja',
+  locale: 'en',
   fallbackLocale: 'en',
   messages: {
     en,
